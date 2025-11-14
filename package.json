@@ -1,0 +1,16 @@
+{
+  "name": "realtime-drawing-app",
+  "version": "1.0.0",
+  "description": "Multi-user real-time drawing application",
+  "main": "server/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  }
+}

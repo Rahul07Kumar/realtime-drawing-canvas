@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Drawing App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="join-screen">
+    <div class="join-container">
+      <h1>Real-Time Drawing</h1>
+      <input type="text" id="username-input" placeholder="Enter your username" maxlength="20">
+      <input type="text" id="room-input" placeholder="Enter room name" maxlength="30">
+      <button id="join-button">Join Room</button>
+    </div>
+  </div>
+
+  <div id="app-screen" style="display: none;">
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <h2 id="room-title"></h2>
+      </div>
+
+      <div class="toolbar-center">
+        <button id="brush-btn" class="tool-btn active" title="Brush">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+          </svg>
+        </button>
+
+        <button id="eraser-btn" class="tool-btn" title="Eraser">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 20H7L3 16l10-10 7 7-4 4"></path>
+          </svg>
+        </button>
+
+        <div class="separator"></div>
+
+        <input type="color" id="color-picker" value="#000000" title="Color">
+
+        <div class="separator"></div>
+
+        <input type="range" id="stroke-width" min="1" max="50" value="2" title="Stroke Width">
+        <span id="stroke-width-label">2px</span>
+
+        <div class="separator"></div>
+
+        <button id="undo-btn" class="action-btn" title="Undo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 7v6h6"></path>
+            <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13"></path>
+          </svg>
+        </button>
+
+        <button id="redo-btn" class="action-btn" title="Redo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 7v6h-6"></path>
+            <path d="M3 17a9 9 0 019-9 9 9 0 016 2.3l3 2.7"></path>
+          </svg>
+        </button>
+
+        <button id="clear-btn" class="action-btn" title="Clear Canvas">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="toolbar-right">
+        <div class="users-panel">
+          <span class="users-label">Online:</span>
+          <div id="users-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="canvas-container">
+      <canvas id="canvas"></canvas>
+      <div id="cursors-container"></div>
+    </div>
+  </div>
+
+ <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
