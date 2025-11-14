@@ -90,3 +90,4 @@ It sets a good foundation for future improvements including:
 - Better mobile responsiveness
 
 Contributions and enhancements are welcome!
+
