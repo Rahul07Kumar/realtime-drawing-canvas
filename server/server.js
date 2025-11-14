@@ -12,14 +12,14 @@ const server = http.createServer(app);
 // Create a Socket.IO server with proper CORS configuration
 const io = new Server(server, {
   cors: {
-    origin: 'https://realtime-drawing-canvas-p4oh.onrender.com/', // Allow requests only from your frontend
+    origin: 'https://realtime-drawing-canvas-p4oh.onrender.com', // Allow requests only from your frontend
     methods: ['GET', 'POST'],
   },
 });
 
 // Enable CORS for Express as well
 app.use(cors({
-  origin: 'http://127.0.0.1:5500',
+  origin: 'https://realtime-drawing-canvas-p4oh.onrender.com',
   methods: ['GET', 'POST'],
 }));
 
