@@ -2,7 +2,7 @@
 export class WebSocketManager {
   constructor() {
     // Connect to the backend Socket.IO server
-    this.socket = io("http://localhost:3000"); // change port if your backend uses a different one
+    this.socket = io("https://realtime-drawing-canvas-backend-k4x8.onrender.com"); // change port if your backend uses a different one
 
     this.isConnected = false; // Track connection status
     this.handlers = {};       // Store event handlers for easy reference
